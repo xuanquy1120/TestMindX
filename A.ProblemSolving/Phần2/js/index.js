@@ -40,7 +40,6 @@ for (let i = 0; i < listFootball.length - 1; i++) {
         }
     }
 }
-//in ra 
 let n = 1;
 for (let i = 0; i < listFootball.length; i++) {
     listFootball[i] = {
@@ -49,6 +48,20 @@ for (let i = 0; i < listFootball.length; i++) {
         GD: listFootball[i].GD,
         position: n,
     }
+    n += 1;
+}
+//sap xep
+for (let i = 0; i < listFootball.length - 1; i++) {
+    for (let j = i + 1; j < listFootball.length; j++) {
+      if (listFootball[i].name.toLowerCase().localeCompare(listFootball[j].name.toLowerCase()) > 0) {
+        let temp = listFootball[i];
+        listFootball[i] = listFootball[j];
+        listFootball[j] = temp;
+      }
+    }
+  }
+  //in ra
+for (let i = 0; i < listFootball.length; i++) {
     const football = listFootball[i];
     console.log(i + 1);
     for (const key in football) {
@@ -56,5 +69,5 @@ for (let i = 0; i < listFootball.length; i++) {
         console.log(key + " : " + value);
     }
     console.log("\t \t");
-    n += 1;
 }
+

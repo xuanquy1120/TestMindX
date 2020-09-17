@@ -14,7 +14,9 @@ for (let i = 0; i < length; i++) {
 }
 console.log(A1);
 console.log(A2);
+let coincide=[];
 let ans = deduplicate(arr);
+console.log(coincide);
 console.log(ans);
 function deduplicate(arr) {
   //kiem tra trung, trung thi xoa luon
@@ -22,7 +24,7 @@ function deduplicate(arr) {
     for(let i = 0; i < arr.length; i++) {
       if (arr[i] === x) 
       {
-        arr.splice(i,1);
+        coincide[i]=x;
         return true;
       }
     }
@@ -34,6 +36,7 @@ function deduplicate(arr) {
   });
   return ans;
 }
+
 
 
 
