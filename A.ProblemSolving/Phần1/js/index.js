@@ -1,23 +1,44 @@
 let A1=[];
 let A2=[];
 let arr=[];
-let length = 3;
-for (let i = 0; i < length; i++) {
+let arry=[];
+for (let i = 0; i < 3; i++) {
   let n = prompt("nhap vao A1");
   A1.push(n);
   arr.push(n);
+  arry.push(n);
 }
-for (let i = 0; i < length; i++) {
+for (let i = 0; i < 3; i++) {
     let n = prompt("nhap vao A2");
     A2.push(n);
     arr.push(n);
+    arry.push(n);
 }
 console.log(A1);
 console.log(A2);
 let coincide=[];
 let ans = deduplicate(arr);
-console.log(coincide);
+
+function arrayRemove(arr, value) {
+  return arr.filter(function(ele){
+      return ele != value;
+  });
+}
+// ans.forEach(element => {
+//   coincide.forEach(element1=>{
+//     if(element1 === element) 
+//     {
+//       result =  arrayRemove(ans, element1);
+//     }
+//   })
+// });
+for(let i = 0; i < coincide.length; i++)
+{
+  ans =  arrayRemove(ans, coincide[i]);
+}
 console.log(ans);
+
+
 function deduplicate(arr) {
   //kiem tra trung, trung thi xoa luon
   let isExist = (arr, x) => {
